@@ -4,8 +4,13 @@ import sys
 def main(src, dst):
     basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
     
-    copy_dir("." + basepath+src, "." + basepath+dst)
-    generate_pages_recursive("." + basepath + "content", "." + basepath + "template.html", "." + basepath + "docs", basepath)    
+    copy_dir(src, dst)
+    generate_pages_recursive(
+        "content",
+        "template.html",
+        "docs",
+        basepath
+            )   
     
 main("static", "docs")
 
