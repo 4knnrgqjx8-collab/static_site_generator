@@ -76,12 +76,4 @@ def markdown_to_html_node(text):
         children.append(blocktype_to_oldest_parent(block, blocktype))
     return ParentNode("div", children)
 
-print(markdown_to_html_node("""
-This is **bolded** paragraph
-text in a p
-tag here
-
-This is another paragraph with _italic_ text and `code` here
-
-"""))
-        
+       

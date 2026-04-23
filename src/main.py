@@ -1,6 +1,7 @@
-from textnode import TextNode, Bender
+from copy_dir import copy_dir
+from generate_pages_recursive import generate_pages_recursive
+def main(src, dst):
+    copy_dir(src, dst)
+    generate_pages_recursive("./content", "template.html", "./public")    
+main("static", "public")
 
-def main(text, text_type, url):
-    return TextNode(text, text_type, url)
-
-print(main("This is some anchor text", "link", "https://www.boot.dev"))
