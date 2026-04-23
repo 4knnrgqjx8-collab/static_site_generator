@@ -12,7 +12,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     
     html_string = markdown_to_html_node(contents_from).to_html()
     page_title = extract_title(contents_from)
-    new_contents = contents_template.replace("{{ Title }}", page_title).replace("{{ Content }}", html_string).replace('src="/', f'src="{basepath}').replace('href=/"', f'href="{basepath}')
+    new_contents = contents_template.replace("{{ Title }}", page_title).replace("{{ Content }}", html_string).replace('src="/', f'src="{basepath}').replace('href="/', f'href="{basepath}')
     
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     with open(dest_path, "w") as dest_file:
